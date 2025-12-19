@@ -34,3 +34,11 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+Voz	Estilo	Recomendação JARVIS
+onyx	Profunda, autoritária	Minha favorita. O tom clássico de elite.
+alloy	Neutra, equilibrada	Versátil e clara.
+echo	Suave, mais jovem	Boa para uma conversa mais relaxada.
+fable	Expressiva, britânica	Para um Jarvis com sotaque de mordomo de Londres.
+nova	Feminina, energética	Se o Senhor preferir uma voz feminina focada em eficiência.
+shimmer	Feminina, calma	Uma voz feminina mais suave e ponderada.

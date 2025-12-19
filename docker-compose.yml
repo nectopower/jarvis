@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  jarvis-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: always
+    environment:
+      - NODE_ENV=production
+      # As variáveis abaixo devem ser configuradas no painel do Coolify (aba Variables)
+      - NEXTAUTH_URL=https://jarvis.servibem.com.br
+      - NEXT_PUBLIC_SUPABASE_URL=${NEXT_PUBLIC_SUPABASE_URL}
+      - NEXT_PUBLIC_SUPABASE_ANON_KEY=${NEXT_PUBLIC_SUPABASE_ANON_KEY}
+      - SUPABASE_SERVICE_ROLE_KEY=${SUPABASE_SERVICE_ROLE_KEY}
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - GOOGLE_CLIENT_ID=${GOOGLE_CLIENT_ID}
+      - GOOGLE_CLIENT_SECRET=${GOOGLE_CLIENT_SECRET}
+      - NEXTAUTH_SECRET=${NEXTAUTH_SECRET}
+      - N8N_WHATSAPP_WEBHOOK_URL=${N8N_WHATSAPP_WEBHOOK_URL}
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.jarvis-app.rule=Host(`jarvis.servibem.com.br`)
+      - traefik.http.routers.jarvis-app.entrypoints=https
+      - traefik.http.routers.jarvis-app.tls=true
+      - traefik.http.services.jarvis-app.loadbalancer.server.port=3000
+    networks:
+      - public
+
+networks:
+  public:
+    external: true
